@@ -3,6 +3,9 @@
 require 'Util.php';
 
 define('chaveCaptcha', '1c98c10b6316dd5982da4df1f3ed7bdf');
+define('proxy' , '559d925baf:fG3PpwJo@br1.payweb.io:4444');
+define('usuario', 'AC218174');
+define('senha', '2821Gil');
 
 function resolveCaptcha($proxy)
 {
@@ -45,7 +48,7 @@ function logar($usuario, $senha, $token, $proxy)
     $url = 'https://web2.bvsnet.com.br/transacional/autenticacao.php';
     $ref = 'https://web2.bvsnet.com.br/transacional/login.php';
 
-    $post = 'lk_codig='.$usuario.'&lk_senha='.$senha.'&lk_width=123&lk_suaft=&cd_usuario=AC218174&cd_cpf=&cd_senha=2821Gil&email=&g-recaptcha-response='.$token.'&lk_manut=https://www.servicodeprotecaoaocredito.com.br/bvs_login.htm&lk_urlesquecisenha=https://www.bvsnet.com.br/cgi-bin/db2www/NETPO101.mbr/RecuperaSenha';
+    $post = 'lk_codig='.$usuario.'&lk_senha='.$senha.'&lk_width=123&lk_suaft=&cd_usuario='.$usuario.'&cd_cpf=&cd_senha='.$senha.'&email=&g-recaptcha-response='.$token.'&lk_manut=https://www.servicodeprotecaoaocredito.com.br/bvs_login.htm&lk_urlesquecisenha=https://www.bvsnet.com.br/cgi-bin/db2www/NETPO101.mbr/RecuperaSenha';
     $send = Util::curl($url, $cookies, $post, true, $ref, false, $proxy);
 
     if(stristr($send, 'cation: menu.ph')){
@@ -105,10 +108,10 @@ function consultar($doc, $cookie, $proxy)
 if(isset($_GET['doc']))
 {
 
-    $usuario = 'AC218174';
-    $senha   = '2821Gil';
+    $usuario = usuario;
+    $senha   = senha;
     $cookie  = file_get_contents('cookie.txt');
-    $proxy   = '559d925baf:fG3PpwJo@br1.payweb.io:4444';
+    $proxy   = proxy;
 
     $con = validarLogin($cookie, $proxy);
     if($con){
