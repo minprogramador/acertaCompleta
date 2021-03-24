@@ -395,6 +395,203 @@ window['_fs_is_outer_script'] = true;
 </form>
 
 
+
+<style>
+html, body {
+    height: 100%;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, li, form {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: "Verdana", Arial, Trebuchet MS;
+}
+
+#all {
+    min-height: 99%;
+    position: relative;
+}
+#container {
+    width: 969px;
+    margin: 0 auto;
+}
+/*.nav-consulta {
+    width: 100%;
+    height: 63px;
+    float: left;
+    position: relative;
+}*/
+.content {
+    padding: 0px;
+    width: 969px;
+    margin-top: 0px;
+}
+.help-back {
+    float: right;
+    width: 100%;
+    margin: 10px 0 -1px 0;
+}
+.cnt-resultado {
+    border: 1px solid #dde3e6;
+}
+.cnt-resultado th strong.blue {
+    font-size: 17px;
+    color: #013d65;
+}
+.div-img-vel-dash {
+    padding: 7px 3px 7px 7px;
+}
+.decisao-mensagem {
+    font-size: 11px;
+    color: #000000;
+    padding: 7px 3px 7px 7px;
+}
+.cnt-resultado td {
+    font-size: 11px;
+    color: #000000;
+}
+.content strong.blue {
+    font-size: 12px !important;
+    color: #013d65;
+}
+img {
+    border: 0;
+}
+ul {
+	list-style: none;
+}
+.imagem-score {
+    background: #fff;
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    max-width: 210px;
+    max-height: 160px;
+    margin: -145px 0px 0px 682px !important;
+    z-index: 1;
+}
+.main-score {
+    position: relative;
+    width: 100%;
+}
+.valor-score-laranja::before {
+    border-left-color: #e36714;
+}
+.valor-score::before {
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+        border-left-color: transparent;
+    content: "";
+    right: -29px;
+    top: 52px;
+    position: absolute;
+}
+
+.valor-score {
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    width: 150px;
+    height: 100px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #c40827;
+}
+.valor-score span {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 13px;
+    margin-left: 25px;
+}
+.descricao-score {
+    background: #fff;
+    color: #000;
+    padding: 15px;
+    position: relative;
+    width: 430px;
+    height: 100px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #dde3e6;
+    margin: -132px 0px 0px 200px;
+}
+.descricao-score span {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.probabilidade-score span {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+.score-imagem-valor-inicial {
+    position: relative;
+    top: -44px;
+    left: 683px;
+    background-color: white;
+    width: 10px;
+    z-index: 2;
+}
+.score-imagem-valor-final {
+    position: relative;
+    top: -58px;
+    left: 912px;
+    background-color: white;
+    width: 10px;
+    z-index: 2;
+}
+.probabilidade-score {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    position: relative;
+    margin: -34px 0px 0px 680px !important;
+    z-index: 2;
+}
+.valor-score-laranja {
+    background: #e36714;
+    border: 0px solid #e36714;
+}
+.cnt-resultado th {
+    font-size: 17px;
+    font-weight: normal;
+    color: #013d65;
+    text-align: left;
+}
+.cnt-resultado tr.blue td {
+    background: #e9edee;
+}
+.help-back {
+    float: right;
+    width: 100%;
+    margin: 10px 0 -1px 0;
+}
+.help-back ul {
+    float: right;
+}
+h2 {
+    font-size: 25px;
+    color: #013d65;
+    margin-bottom: 15px;
+}
+.help-back span {
+    float: right;
+    font-size: 10px;
+    margin: 5px 10px 0px 0px;
+    padding: 0px;
+}
+
+</style>
+
 </head>
 
 
@@ -646,7 +843,7 @@ window['_fs_is_outer_script'] = true;
 					
 					
 					
-						<img src="resources/images/nao-recomendado.png"></img>
+						<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/images/nao-recomendado.png"></img>
 					
 					
 					
@@ -1100,7 +1297,7 @@ window['_fs_is_outer_script'] = true;
 										</span>
 									</div>
 									
-									<img src="resources/images/score_seta_laranja.png" class="imagem-score" />
+									<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/images/score_seta_laranja.png" class="imagem-score" />
 									
 									<div class="score-imagem-valor-inicial">0</div>
 									<div class="score-imagem-valor-final">1000</div>
@@ -1253,7 +1450,7 @@ window['_fs_is_outer_script'] = true;
 					<tr class="blue">
 						<td>
 							
-								<img src="resources/img/ico_exc_03.png" />
+								<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico_exc_03.png" />
 							
 						</td>
 						
@@ -1305,7 +1502,7 @@ window['_fs_is_outer_script'] = true;
 					<tr class="blue">
 						<td>
 							
-								<img src="resources/img/ico_exc_03.png" />
+								<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico_exc_03.png" />
 							
 						</td>
 						
@@ -1382,7 +1579,7 @@ window['_fs_is_outer_script'] = true;
 					<tr class="blue">
 						<td>
 							
-								<img src="resources/img/ico_exc_03.png" />
+								<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico_exc_03.png" />
 							
 						</td>
 						
@@ -1566,12 +1763,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('identificacao_sintese_cadastral');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -1826,12 +2023,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('alerta_documentos');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -2002,12 +2199,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('localizacao_telefones');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -2273,12 +2470,12 @@ window['_fs_is_outer_script'] = true;
 				<a style="cursor: pointer" onclick="javascript:abreHelp('
 		   		outras_grafias
 		   ');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -2406,12 +2603,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('telefones_vinculados');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -2667,12 +2864,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('registro_debito');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -3120,7 +3317,7 @@ window['_fs_is_outer_script'] = true;
 		    
 		    
 			    <div id="divBotaoExibeDebito" style="width: 100%" onclick="exibeMaisTabela('Debito', '#divRegistroDebito .cnt-resultado .detalhes');" class="botao-mais-menos">
-					<img src="resources/images/mais.png" width="16px" height="16px">
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/images/mais.png" width="16px" height="16px">
 					<label>Mais Detalhes</label>
 				</div>
 				
@@ -3219,12 +3416,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('acoes_civeis');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -3357,12 +3554,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('protestos');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -3902,12 +4099,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('consulta_segmento');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -6185,12 +6382,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('cheques_devolucao_usuario');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -6352,12 +6549,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('ccf_cheques_sem_fundo');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -6493,12 +6690,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('cheque_sustado_motivo_21');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -6818,12 +7015,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('participacao_empresas');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -6954,12 +7151,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('recuperacoes_falencias_acoes_judiciais');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -7050,7 +7247,7 @@ window['_fs_is_outer_script'] = true;
 							
 								<a href="/FamiliaAcertaPFWeb/formularioAcertaCompleto"
 									class="link_left"> <img
-									src="/FamiliaAcertaPFWeb/resources/img/bt_nco.gif"
+									src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/bt_nco.gif"
 									alt="Nova consulta" width="90"
 									height="18" border="0" /> </a>
 							</div>
@@ -7785,7 +7982,7 @@ window['_fs_is_outer_script'] = true;
 					
 					
 					
-						<img src="resources/images/nao-recomendado.png"></img>
+						<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/images/nao-recomendado.png"></img>
 					
 					
 					
@@ -8239,7 +8436,7 @@ window['_fs_is_outer_script'] = true;
 										</span>
 									</div>
 									
-									<img src="resources/images/score_seta_laranja.png" class="imagem-score" />
+									<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/images/score_seta_laranja.png" class="imagem-score" />
 									
 									<div class="score-imagem-valor-inicial">0</div>
 									<div class="score-imagem-valor-final">1000</div>
@@ -8392,7 +8589,7 @@ window['_fs_is_outer_script'] = true;
 					<tr class="blue">
 						<td>
 							
-								<img src="resources/img/ico_exc_03.png" />
+								<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico_exc_03.png" />
 							
 						</td>
 						
@@ -8444,7 +8641,7 @@ window['_fs_is_outer_script'] = true;
 					<tr class="blue">
 						<td>
 							
-								<img src="resources/img/ico_exc_03.png" />
+								<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico_exc_03.png" />
 							
 						</td>
 						
@@ -8521,7 +8718,7 @@ window['_fs_is_outer_script'] = true;
 					<tr class="blue">
 						<td>
 							
-								<img src="resources/img/ico_exc_03.png" />
+								<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico_exc_03.png" />
 							
 						</td>
 						
@@ -8705,12 +8902,12 @@ window['_fs_is_outer_script'] = true;
 		<ul>			
 			<li class="ajuda">
 				<a style="cursor: pointer" onclick="javascript:abreHelp('identificacao_sintese_cadastral');">
-					<img src="resources/img/ico/ajuda.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/ajuda.gif" alt="" />
 				</a>
 			</li>
 			<li class="seta-voltar">
 				<a href="#top" class="bot-left">
-					<img src="resources/img/ico/seta-voltar.gif" alt="" />
+					<img src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/img/ico/seta-voltar.gif" alt="" />
 				</a>
 			</li>
 		</ul>

@@ -6,7 +6,201 @@ define('chaveCaptcha', '1c98c10b6316dd5982da4df1f3ed7bdf');
 define('proxy' , '559d925baf:fG3PpwJo@br1.payweb.io:4444');
 define('usuario', 'AC218174');
 define('senha', '2821Gil');
+define('css', '<style>
+html, body {
+    height: 100%;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, li, form {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: "Verdana", Arial, Trebuchet MS;
+}
 
+#all {
+    min-height: 99%;
+    position: relative;
+}
+#container {
+    width: 969px;
+    margin: 0 auto;
+}
+/*.nav-consulta {
+    width: 100%;
+    height: 63px;
+    float: left;
+    position: relative;
+}*/
+.content {
+    padding: 0px;
+    width: 969px;
+    margin-top: 0px;
+}
+.help-back {
+    float: right;
+    width: 100%;
+    margin: 10px 0 -1px 0;
+}
+.cnt-resultado {
+    border: 1px solid #dde3e6;
+}
+.cnt-resultado th strong.blue {
+    font-size: 17px;
+    color: #013d65;
+}
+.div-img-vel-dash {
+    padding: 7px 3px 7px 7px;
+}
+.decisao-mensagem {
+    font-size: 11px;
+    color: #000000;
+    padding: 7px 3px 7px 7px;
+}
+.cnt-resultado td {
+    font-size: 11px;
+    color: #000000;
+}
+.content strong.blue {
+    font-size: 12px !important;
+    color: #013d65;
+}
+img {
+    border: 0;
+}
+ul {
+    list-style: none;
+}
+.imagem-score {
+    background: #fff;
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    max-width: 210px;
+    max-height: 160px;
+    margin: -145px 0px 0px 682px !important;
+    z-index: 1;
+}
+.main-score {
+    position: relative;
+    width: 100%;
+}
+.valor-score-laranja::before {
+    border-left-color: #e36714;
+}
+.valor-score::before {
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+        border-left-color: transparent;
+    content: "";
+    right: -29px;
+    top: 52px;
+    position: absolute;
+}
+
+.valor-score {
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    width: 150px;
+    height: 100px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #c40827;
+}
+.valor-score span {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 13px;
+    margin-left: 25px;
+}
+.descricao-score {
+    background: #fff;
+    color: #000;
+    padding: 15px;
+    position: relative;
+    width: 430px;
+    height: 100px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #dde3e6;
+    margin: -132px 0px 0px 200px;
+}
+.descricao-score span {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.probabilidade-score span {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+.score-imagem-valor-inicial {
+    position: relative;
+    top: -44px;
+    left: 683px;
+    background-color: white;
+    width: 10px;
+    z-index: 2;
+}
+.score-imagem-valor-final {
+    position: relative;
+    top: -58px;
+    left: 912px;
+    background-color: white;
+    width: 10px;
+    z-index: 2;
+}
+.probabilidade-score {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    position: relative;
+    margin: -34px 0px 0px 680px !important;
+    z-index: 2;
+}
+.valor-score-laranja {
+    background: #e36714;
+    border: 0px solid #e36714;
+}
+.cnt-resultado th {
+    font-size: 17px;
+    font-weight: normal;
+    color: #013d65;
+    text-align: left;
+}
+.cnt-resultado tr.blue td {
+    background: #e9edee;
+}
+.help-back {
+    float: right;
+    width: 100%;
+    margin: 10px 0 -1px 0;
+}
+.help-back ul {
+    float: right;
+}
+h2 {
+    font-size: 25px;
+    color: #013d65;
+    margin-bottom: 15px;
+}
+.help-back span {
+    float: right;
+    font-size: 10px;
+    margin: 5px 10px 0px 0px;
+    padding: 0px;
+}
+
+</style>');
 function resolveCaptcha($proxy)
 {
     $url = 'http://2captcha.com/in.php?key='.chaveCaptcha.'&method=userrecaptcha&googlekey=6LdILFcUAAAAAMM3XN6QEzBvkzIop--D52TDgviF&pageurl=https://web2.bvsnet.com.br/transacional/login.php&here=now&json=1&proxy='.$proxy;
@@ -87,20 +281,20 @@ function consultar($doc, $cookie, $proxy)
     $token  = Util::corta($ver, 'name="_csrf" value="', '"');
 
     $url = 'https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resultadoConsulta';
-    $post = "quantidade=&valor=&documento={$doc}&documentos=%2C%2C%2C%2C%2C{$doc}&cepConfirmacao=&opcaoCpf=doc&nomeFormulario=Acerta+Completo&consulta=doc&cpf1=&cpf2=&cpf3=&cpf4=&cpf5=&multiplasPaginas=true&comboScoreResult=&comboCreditoResult=&comboTipoCredito=OU&txtTelefone=&txtTelefone=&chkCheque=on&chequeSimples=simples&cheque=S&cmc7Mascara1=&cmc7Mascara2=&cmc7Mascara3=&cmc7TotalChequesMascara=&cmc7ValorMascara=&bancoMascara=&agenciaMascara=&contaCorrenteMascara=&digitoContaMascara=&numeroChequeMascara=&digitoChequeMascara=&totalChequeMascara=&dataChequeMascara=&valorMascara=&_csrf=".$token;
+    $post = "quantidade=&valor=&documento={$doc}&documentos=%2C%2C%2C%2C%2C&cepConfirmacao=&opcaoCpf=doc&nomeFormulario=Acerta+Completo&consulta=doc&cpf1=&cpf2=&cpf3=&cpf4=&cpf5=&multiplasPaginas=true&comboScoreResult=&comboCreditoResult=&comboTipoCredito=OU&txtTelefone=&txtTelefone=&chkCheque=on&chequeSimples=simples&cheque=S&cmc7Mascara1=&cmc7Mascara2=&cmc7Mascara3=&cmc7TotalChequesMascara=&cmc7ValorMascara=&bancoMascara=&agenciaMascara=&contaCorrenteMascara=&digitoContaMascara=&numeroChequeMascara=&digitoChequeMascara=&totalChequeMascara=&dataChequeMascara=&valorMascara=&_csrf=".$token;
     $ref = 'https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/formularioAcertaCompleto';
 
     $ver = Util::curl($url, $cookie, $post, false, $ref, false, $proxy);
-    $ver = str_replace('href="/', 'href="https://acerta.bvsnet.com.br/', $ver);
-    $ver = str_replace('src="resources/', 'src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/', $ver);
-
-    $ver = str_replace('src="/FamiliaAcertaPFWeb/', 'src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/', $ver);
+//    $ver = str_replace('href="/', 'href="https://acerta.bvsnet.com.br/', $ver);
+   $ver = str_replace('src="resources/', 'src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/', $ver);
+    $ver = str_replace('</title>', '</title>'.css, $ver);
+    // $ver = str_replace('src="/FamiliaAcertaPFWeb/', 'src="https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/', $ver);
     
     $ver = str_replace('"./resources/', '"https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/', $ver);
     $ver = str_replace('"resources/', '"https://acerta.bvsnet.com.br/FamiliaAcertaPFWeb/resources/', $ver);
 
-    $ver = str_replace('help-back"', 'help-back" style="display:none;"', $ver);
-    $ver = str_replace('divImgVelDash"', 'divImgVelDash" style="display:none;"', $ver);
+    // $ver = str_replace('help-back"', 'help-back" style="display:none;"', $ver);
+    // $ver = str_replace('divImgVelDash"', 'divImgVelDash" style="display:none;"', $ver);
     
     return $ver;
 }
@@ -149,7 +343,7 @@ if(isset($_GET['doc']))
         file_put_contents('cookie.txt', $cookie);
 
         if($con){
-            $ver = consultar($cookie, $proxy);
+            $ver = consultar($_GET['doc'], $cookie, $proxy);
             echo $ver;
             die;
         }    
