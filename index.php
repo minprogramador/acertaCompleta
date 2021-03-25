@@ -4,8 +4,8 @@ require 'Util.php';
 
 define('chaveCaptcha', '1c98c10b6316dd5982da4df1f3ed7bdf');
 define('proxy' , '559d925baf:fG3PpwJo@br1.payweb.io:4444');
-define('usuario', 'AC218174');
-define('senha', '2821Gil');
+define('usuario', 'AC163654');
+define('senha', '08marina');
 define('css', '<style>
 html, body {
     height: 100%;
@@ -245,10 +245,24 @@ function logar($usuario, $senha, $token, $proxy)
     $post = 'lk_codig='.$usuario.'&lk_senha='.$senha.'&lk_width=123&lk_suaft=&cd_usuario='.$usuario.'&cd_cpf=&cd_senha='.$senha.'&email=&g-recaptcha-response='.$token.'&lk_manut=https://www.servicodeprotecaoaocredito.com.br/bvs_login.htm&lk_urlesquecisenha=https://www.bvsnet.com.br/cgi-bin/db2www/NETPO101.mbr/RecuperaSenha';
     $send = Util::curl($url, $cookies, $post, true, $ref, false, $proxy);
 
-    if(stristr($send, 'cation: menu.ph')){
+    if(stristr($send, 'CODIGO DO OPERADOR NAO CADAS')){
+        return 'error';
+    }
+    elseif(stristr($send, 'cation: menu.ph')){
         return $cookies;
+    }elseif(stristr($send, 'name="frmMenuPME"')){
+            
+        $url = 'https://www2.bvsnet.com.br/login.php';
+        $frm = Util::parseForm($send);
+        $send = Util::curl($url, $cookies, http_build_query($frm), true, $url, false, $proxy);
+
+        if(stristr($send, 'cation: home.ph')){
+            $url = 'https://www2.bvsnet.com.br/home.php';
+            $send = Util::curl($url, $cookies, null, true, $url, false, $proxy);
+            return $cookies;
+        }
     }else{
-        return false;
+         return false;
     }
 }
 
@@ -299,18 +313,19 @@ function consultar($doc, $cookie, $proxy)
     return $ver;
 }
 
+$_GET['doc'] = '11111111111';
+
 if(isset($_GET['doc']))
 {
-
     $usuario = usuario;
     $senha   = senha;
     $cookie  = file_get_contents('cookie.txt');
     $proxy   = proxy;
 
     $con = validarLogin($cookie, $proxy);
+
     if($con){
         $ver = consultar($_GET['doc'], $cookie, $proxy);
-
         if(stristr($ver, 'ES CONFIDENCIAIS - S')){
             echo $ver;
         }else{
@@ -318,7 +333,9 @@ if(isset($_GET['doc']))
             $token   = resolveCaptcha($proxy);
 
             $cookie   = logar($usuario, $senha, $token, $proxy);
-
+            if($cookie === 'error'){
+                die('error');
+            }
             $con = validarLogin($cookie, $proxy);
             file_put_contents('cookie.txt', $cookie);
 
@@ -336,16 +353,20 @@ if(isset($_GET['doc']))
 
         //se nao tiver cookie resolver e logar...
         $token   = resolveCaptcha($proxy);
-
         $cookie   = logar($usuario, $senha, $token, $proxy);
-
+        if($cookie === 'error'){
+            die('error');
+        }
         $con = validarLogin($cookie, $proxy);
+
         file_put_contents('cookie.txt', $cookie);
 
         if($con){
             $ver = consultar($_GET['doc'], $cookie, $proxy);
-            echo $ver;
-            die;
+            if(stristr($ver, 'ES CONFIDENCIAIS - S')){
+                echo $ver;
+                die;
+            }
         }    
     }
 }else{
