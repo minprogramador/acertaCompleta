@@ -2,10 +2,10 @@
 
 require 'Util.php';
 
-define('chaveCaptcha', '1c98c10b6316dd5982da4df1f3ed7bdf');
-define('proxy' , '559d925baf:fG3PpwJo@br1.payweb.io:4444');
-define('usuario', 'AC163654');
-define('senha', '08marina');
+define('chaveCaptcha', '');
+define('proxy' , '');
+define('usuario', '');
+define('senha', '');
 define('css', '<style>
 html, body {
     height: 100%;
