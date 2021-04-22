@@ -508,33 +508,4 @@ abstract class Util
         }
     }
 
-    public static function sendMail($de=null, $para, $assunto, $mensagem) {
-        if($de == null) {
-            $de = 'noreply@test.com';
-        }
-
-        $curl_post_data=array(
-            'from'    => "LiveBusca <{$de}>",
-            'to'      => $para,
-            'subject' => $assunto,
-            'text'    => $mensagem
-        );
-
-        $service_url = 'https://api.mailgun.net/v3/sandboxc37ca04f08204c248e3eeb9c48695270.mailgun.org/messages';
-        $curl = curl_init($service_url);
-        curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($curl, CURLOPT_USERPWD, "api:50137648bbe04b8784265c6bd9351a00-f45b080f-cc405a17");
-
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_POST, true);
-
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $curl_post_data);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-
-        $curl_response = curl_exec($curl);
-        $response = json_decode($curl_response);
-        curl_close($curl);
-        return $response;
-    }
 }
